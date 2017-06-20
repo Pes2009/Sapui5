@@ -1,36 +1,27 @@
 <!DOCTYPE HTML>
 <html>
-
 	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
 
-		<title>Example07011</title>
-
-		<script id="sap-ui-bootstrap"
-			src="../../resources/sap-ui-core.js"
-			data-sap-ui-libs="sap.m"
-			data-sap-ui-theme="sap_belize"
-			data-sap-ui-compatVersion="edge"
-			data-sap-ui-resourceroots='{"hcpbook.chp07.demoExample0701": ""}'>
+		<script src="resources/sap-ui-core.js"
+				    id="sap-ui-bootstrap"
+				    data-sap-ui-libs="sap.ui.commons, sap.ui.table"
+				    data-sap-ui-theme="sap_bluecrystal"
+            data-sap-ui-xx-bindingSyntax="complex"
+				    data-sap-ui-resourceroots='{"hcpbook.chp07.demoExample0701": "./view/"}'>
 		</script>
-
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-
+		
 		<script>
-			sap.ui.getCore().attachInit(function() {
-				new sap.m.Shell({
-					app: new sap.ui.core.ComponentContainer({
-						height : "100%",
-						name : "hcpbook.chp07.demoExample0701"
-					})
-				}).placeAt("content");
-			});
-		</script>
+      sap.ui.getCore().attachInit(function() {
+    	  new sap.ui.core.ComponentContainer({
+              name: "hcpbook.chp07.demoExample0701"
+    		    }).placeAt("content");
+      });
+    </script>
 	</head>
-
-	<body class="sapUiBody" id="content">
-		<p>Hello World</p>
+  
+  <body class="sapUiBody" role="application">
+		<div id="content" style="margin: 10px"></div>
 	</body>
-
 </html>

@@ -8,7 +8,14 @@ sap.ui.define([
 	return UIComponent.extend("hcpbook.chp07.demoExample0701.Component", {
 
 		metadata: {
-			manifest: "json"
+			name: "HCP Book :: Chapter 7 :: HTML5 Application Demo",
+    		version: "1.0",
+			manifest: "json",
+				dependencies: {
+	    		 libs: ["sap.ui.commons", "sap.ui.table"],
+	    		components: []
+	    		 },
+		   rootView: "hcpbook.chp07.demoExample0701.App"
 		},
 
 		/**
