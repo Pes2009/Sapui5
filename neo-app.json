@@ -1,4 +1,11 @@
 {
+  "authenticationMethod": "saml",
+  "securityConstraints": [
+  	{
+  		"permission": "AccessApplicationDescriptor",
+  		"description": "Access application description",
+  		"protectedPaths": ["/neo-app.json"]
+  	}],
   "welcomeFile": "/webapp/index.html",
   "routes": [
     {
@@ -10,14 +17,14 @@
       },
       "description": "SAPUI5 Resources"
     },
+    
     {
-      "path": "/test-resources",
+      "path": "/Northwind.svc",
       "target": {
-        "type": "service",
-        "name": "sapui5",
-        "entryPath": "/test-resources"
+        "type": "destination",
+        "name": "northwind_http"
       },
-      "description": "SAPUI5 Test Resources"
+      "description": "HTTP Destination to Northwind"
     }
   ],
   "sendWelcomeFileRedirect": true

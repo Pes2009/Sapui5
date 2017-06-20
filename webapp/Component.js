@@ -17,6 +17,10 @@ sap.ui.define([
 		 * @override
 		 */
 		init: function() {
+			// Define the application's data model:
+			var oModel =
+				new sap.ui.model.odata.OdataModel("/Northwind.svc", true);
+				this.setModel(oModel);
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 
