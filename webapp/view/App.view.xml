@@ -1,0 +1,11 @@
+<mvc:View controllerName="hcpbook.chp07.demoExample0701.controller.App" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="witam">
+				<content></content>
+			</Page>
+		</pages>
+	</App>
+	<TextView text="Hello world" style="Bold" />
+</mvc:View>
