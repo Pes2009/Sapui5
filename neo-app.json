@@ -1,5 +1,5 @@
 {
-  "authenticationMethod": "saml",
+  
   "welcomeFile": "index.html",
   "routes": [
     {
@@ -19,13 +19,8 @@
       },
       "description": "HTTP Destination Pointing at Northwind OData Service"
     }
-  ],
-  
-  "securityConstraints": [
-      {
-          "permission": "AccessApplicationDescriptor",
-          "description": "Access application descriptor",
-          "protectedPaths": ["/neo-app.json"]
-      }
   ]
+  
+
+  
 }
