@@ -1,8 +1,8 @@
 <mvc:View controllerName="hcpbook.chp07.demoExample0701.controller.App" xmlns:html="http://www.w3.org/1999/xhtml"
           xmlns:mvc="sap.ui.core.mvc"
           xmlns:table="sap.ui.table"
-          xmlns:layout="sap.ui.commons.layout"
-          xmlns="sap.ui.commons"
+          xmlns:layout="sap.ui.layout"
+          xmlns="sap.m"
           displayBlock="true">
     <layout:MatrixLayout>
         <layout:MatrixLayoutRow>
