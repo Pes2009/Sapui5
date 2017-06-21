@@ -1,5 +1,5 @@
 {
-  
+  "authenticationMethod": "saml",
   "welcomeFile": "index.html",
   "routes": [
     {
