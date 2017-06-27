@@ -10,11 +10,20 @@
 		"title": "{{appTitle}}",
 		"description": "{{appDescription}}",
 		"sourceTemplate": {
-			"id": "ui5template.basicSAPUI5ApplicationProject",
-			"version": "1.40.12"
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/northwind/V2/Northwind/Northwind.svc/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
 		}
 	},
-
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -30,16 +39,11 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": [
-			"sap_hcb",
-			"sap_belize"
-
-		]
+		"supportedThemes": ["sap_hcb", "sap_belize"]
 	},
-
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "HelloWorld.view.View1",
+			"viewName": "HelloWorld.view.App",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -64,11 +68,74 @@
 				"settings": {
 					"bundleName": "HelloWorld.i18n.i18n"
 				}
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "Default",
+					"defaultCountMode": "Request",
+					"useBatch": false
+				},
+				"dataSource": "mainService",
+				"preload": true
 			}
 		},
 		"resources": {
 			"css": [{
 				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewPath": "HelloWorld.view",
+				"controlId": "app",
+				"viewLevel": 0,
+				"controlAggregation": "pages"
+			},
+			"targets": {
+				"home": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "View1",
+					"viewLevel": 2
+				},
+					"master": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Master",
+					"viewLevel": 1
+				},
+				"detail": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearAggregation": true,
+					"viewName": "Detail",
+					"viewLevel": 2
+				}
+			},
+			"routes": [{
+				"name": "home",
+				"pattern": "home",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["home"]
+			},
+			{
+				"name": "master",
+				"pattern": "",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["master"]
+			},{
+				"name": "detail",
+				"pattern": "detail/{productId}",
+				"titleTarget": "",
+				"greedy": false,
+				"target": ["detail"]
 			}]
 		}
 	}
