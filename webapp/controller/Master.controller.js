@@ -49,6 +49,24 @@ return BaseController.extend("HelloWorld.controller.Master", {
 			var oList = this.getView().byId("productList");
 			var oBinding = oList.getBinding("items");
 			oBinding.filter(aFilter);
-		}
+		},
+		
+		_getPathInfo: function() {
+			
+			if (!this._sPath) {
+				var oPage = this.getView().byId("productInfo");
+				
+				// "/Products(1)/ProductName
+				this._sPath = oPage.getBindingContext().getPath();
+			}
+			return this._sPath;
+		},
+		handleListItemPress: function (evt) {
+ 	var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+ 	var selectedProductId = evt.getSource().getBindingContext().getProperty("ProductID");
+	oRouter.navTo("detail", {
+		productId: selectedProductId
+	});
+}
 	});
 });
